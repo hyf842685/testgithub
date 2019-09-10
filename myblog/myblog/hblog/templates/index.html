@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>首页</title>
+    <link rel="stylesheet" href="{% static 'css/semantic.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mycss.css' %}">
+    <link rel="stylesheet" href="{% static 'css/swiper.css' %}">
+    <script src="{% static 'js/vue.js' %}" charset="utf-8"></script>
+    <script src="{% static 'js/reqwest.js' %}" charset="utf-8"></script>
+</head>
+<body>
+{% verbatim %}
+
+<div id="index">
+
+    <!--顶部导航栏-->
+    <div class="top-menu">
+        <div class="ui container">
+            <div class="ui four column grid">
+                <div v-for='item in topmenu' class="column">
+                    {{ item.title }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--空白div-->
+    <div id="top-black"></div>
+    <!--首页幻灯-->
+    <div id="banner">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="/static/image/1.jpg">
+                </div>
+                <div class="swiper-slide">
+                    <img src="/static/image/2.jpg">
+                </div>
+                <div class="swiper-slide">
+                    <img src="/static/image/1.jpg">
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+    <!--首页功能导航-->
+    <div class="nav-btn">
+        <div class="ui container">
+            <div class="ui four column grid">
+                <div class="column">
+                    <img src="/static/image/icon1.png">
+                </div>
+                <div class="column">
+                    <img src="/static/image/icon2.png">
+                </div>
+                <div class="column">
+                    <img src="/static/image/icon3.png">
+                </div>
+                <div class="column">
+                    <img src="/static/image/icon4.png">
+                </div>
+                <div class="column">
+                    <img src="/static/image/icon1.png">
+                </div>
+                <div class="column">
+                    <img src="/static/image/icon2.png">
+                </div>
+                <div class="column">
+                    <img src="/static/image/icon3.png">
+                </div>
+                <div class="column">
+                    <img src="/static/image/icon4.png">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--文章列表-->
+    <div class="article-list">
+        <div class="ui container">
+            <div class="ui centered header">
+                <h2>最新文章</h2>
+            </div>
+
+            <div class="article-item">
+                <img src="/static/image/article.jpg">
+                <div class="title">这是标题
+                    <span>2019-09-05</span>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="article-item">
+                <img src="/static/image/article.jpg">
+                <div class="title">这是标题
+                    <span>2019-09-05</span>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="article-item">
+                <img src="/static/image/article.jpg">
+                <div class="title">这是标题
+                    <span>2019-09-05</span>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="article-item">
+                <img src="/static/image/article.jpg">
+                <div class="title">这是标题
+                    <span>2019-09-05</span>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="article-item">
+                <img src="/static/image/article.jpg">
+                <div class="title">这是标题
+                    <span>2019-09-05</span>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+
+    <!--底部导航-->
+    <div class="tabBar">
+        <div class="ui four column grid">
+            <div class="column">
+                首页
+            </div>
+            <div class="column">
+                分类
+            </div>
+            <div class="column">
+                消息
+            </div>
+            <div class="column">
+                我的
+            </div>
+        </div>
+    </div>
+</div>
+{% endverbatim %}
+<script src="{% static 'js/index.js' %}" charset="utf-8"></script>
+<script src="{% static 'js/swiper.js' %}" charset="utf-8"></script>
+
+<script>
+    var swiper = new Swiper('.swiper-container', {
+      spaceBetween: 30,
+      centeredSlides: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+
+
+
+
+</script>
+</body>
+</html>
